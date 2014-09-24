@@ -8,11 +8,39 @@
 
 #include <stdio.h>
 
-int main(int argc, const char * argv[])
-{
+int main(int argc, const char * argv[]){
+    
+    int x;
+    int y;
+    int spaces;
+    int enteredHeight;
+    
+    printf("choose a height for your zig-zag:");
+    scanf("%d", &enteredHeight);
 
-    // insert code here...
-    printf("Hello, World!\n");
-    return 0;
+    
+    y = enteredHeight;
+
+    while (y > 0) {
+        
+        for (spaces = enteredHeight - y; spaces > 0; spaces--) {
+            printf(" ");
+        }
+        
+        for (x = 1 ; x < 2*y ; x++) {
+            
+            if (x == 1 || x == 2*y - 2) {
+                printf("*");
+            }
+            printf(" ");
+            
+        }
+        
+        printf("\n");
+        
+        y--;
+    
+    }
+    
 }
 
